@@ -1,7 +1,97 @@
-li a {
-  color: green;
+* {
+  font-family: Arial, sans-serif; 
+  color: white;                  
+  text-shadow: 
+    -1px -1px 0px black,         
+    1px -1px 0px black,          
+    -1px 1px 0px black,          
+    1px 1px 0px black;           
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 
+    -2px -2px 0px black,         
+    2px -2px 0px black,          
+    -2px 2px 0px black,          
+    2px 2px 0px black;
+}
+
+/* Unvisited links */
+a:link {
+  color: #0000EE;  /* Blue color for unvisited links */
+  text-shadow: none;
+}
+
+/* Visited links */
+a:visited {
+  color: #551A8B;  /* Purple color for visited links */
+  text-shadow: none;
+}
+
+/* Active links (while clicked) */
+a:link:active,
+a:visited:active {
+  color: #FF0000;  /* Red color when the link is clicked */
+  text-shadow: none;
 }
 
 body {
-  background: white url("images/background.png") no-repeat ;
+  background: white  url("images/background.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* height: 100vh; */
+  margin: 0;
+}
+
+nav {
+  background-color: transparent; /* Keep the navbar background transparent */
+  padding: 10px 20px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between each item */
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;  /* Text color white by default */
+  background-color: #007BFF;  /* Solid blue background for each link */
+  font-size: 16px;
+  padding: 10px 15px;
+  border: 2px solid #007BFF;  /* Border same color as background */
+  border-radius: 5px;  /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition for hover */
+}
+
+/* Hover effect */
+nav ul li a:hover {
+  background-color: #0056b3; /* Darker blue when hovered */
+  color: white;  /* Keep the text white when hovered */
+  border-color: #0056b3; /* Darken the border when hovered */
+}
+
+/* Active Link Styling */
+nav ul li a.active {
+  background-color: #0056b3;  /* Highlight active link with darker blue */
+  color: white;  /* White text */
+  border-color: #004085;  /* Darker border color for active link */
+}
+
+/* Optional: responsive design (for small screens) */
+@media (max-width: 768px) {
+  nav ul {
+      flex-direction: column;  /* Stack navbar items vertically on smaller screens */
+      gap: 10px;
+  }
 }

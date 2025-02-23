@@ -170,5 +170,6 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-#Local Windows config
+#Local stuff
 *.ps1
+.creds

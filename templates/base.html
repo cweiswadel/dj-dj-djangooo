@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Polls Site{% endblock %}</title>
+    <!-- Add your CSS files here -->
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'polls:index' %}"class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+            {% comment %} <li><a href="{% url 'polls' %}">Polls</a></li> {% endcomment %}
+            {% comment %} <li><a href="{% url 'about' %}">About</a></li> {% endcomment %}
+            <!-- Add more links as needed -->
+        </ul>
+    </nav>
+
+    <!-- Main content of the page -->
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Add your JS files here -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

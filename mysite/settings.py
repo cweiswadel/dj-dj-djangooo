@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     '192.168.0.188',
     '136.60.8.48', # local WAN public (internet) IP
     #domain name -- if present
+    '127.0.0.1',
 ]
 
 
@@ -60,7 +61,9 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
